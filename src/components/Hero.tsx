@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Background3D from "@/components/Background3D";
 
 const Hero = () => {
     // Variants for text animations
@@ -23,6 +24,11 @@ const Hero = () => {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             {/* Background Gradients & Effects */}
             <div className="absolute inset-0 z-0 bg-black">
+                {/* 3D Background Layer */}
+                <div className="absolute inset-0 z-20 opacity-60">
+                    <Background3D />
+                </div>
+
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-900/20 blur-[120px] animate-pulse-slow" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-teal-900/20 blur-[120px] animate-pulse-slow delay-1000" />
 
@@ -30,7 +36,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ opacity: 0.1 }} />
             </div>
 
-            <div className="container px-6 md:px-12 lg:px-24 relative z-10 flex flex-col items-center text-center">
+            <div className="container px-6 md:px-12 lg:px-24 relative z-30 flex flex-col items-center text-center">
 
                 {/* Badge */}
                 <motion.div
